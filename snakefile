@@ -97,8 +97,8 @@ rule fastqc_2:
 
 rule multiqc_2:
     input:
-        expand("trimmed/paired/{sample}_forward_paired_R1.fastq.gz", sample = SAMPLES),
-        expand("trimmed/paired/{sample}_revers_paired_R2.fastq.gz", sample = SAMPLES)
+        expand("trimmed/paired/qc/{sample}_forward_paired_R1_fastqc.html", sample = SAMPLES),
+        expand("trimmed/paired/qc/{sample}_revers_paired_R2_fastqc.html", sample = SAMPLES)
     output:
         "trimmed/paired/qc/multiqc/multiqc_report.html"
     conda:
